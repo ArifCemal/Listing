@@ -1,0 +1,47 @@
+<br><br>
+<table *ngIf="students && !isDetail">
+  <tr style="font-weight: bold">Student List</tr>
+
+  <td>
+    <tr>Id</tr>
+  </td>
+
+  <td>
+    <tr>Title</tr>
+  </td>
+
+  <tr *ngFor="let student of this.students[0]">
+    <td><a routerLink="/students" (click)="getStudentDetail(student.id)" routerLinkActive="active">{{student.id}} </a></td>
+    <td> {{student.title}}</td>
+  </tr>
+</table>
+<div *ngIf="!students">No registered student yet.</div>
+
+<table *ngIf="isDetail && detail">
+  <tr style="font-weight: bold">Student Detail</tr>
+  <td>
+    <tr>User Id</tr>
+  </td>
+
+  <td>
+    <tr>Id</tr>
+  </td>
+
+  <td>
+    <tr>Title</tr>
+  </td>
+
+  <td>
+    <tr>Completed</tr>
+  </td>
+
+  <tr>
+    <td><a>{{detail[0].userId}} </a></td>
+    <td> {{detail[0].id}}</td>
+    <td><a>{{detail[0].title}} </a></td>
+    <td> {{detail[0].completed}}</td>
+  </tr>
+</table>
+
+
+
